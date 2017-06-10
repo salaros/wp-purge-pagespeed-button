@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 class PageSpeedPurge {
 
 	public function __construct() {
-		//sets the default trading hour days (used by the content type)
+		// Enqueue css and js files
 		add_action( 'admin_enqueue_scripts', array( $this, 'embed_admin_assets' ), 101 );
 
 		// Add 'Clear Redis cache' button to the admin bar
