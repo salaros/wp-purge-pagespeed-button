@@ -11,7 +11,7 @@
 * Text Domain: wp-pagespeed-purge
 */
 
-defined( 'ABSPATH' ) or die( 'Nope, not accessing this' );
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 
 class PageSpeedPurge {
 
