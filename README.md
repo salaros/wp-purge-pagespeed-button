@@ -1,6 +1,9 @@
 # [WP PageSpeed Purge Button](https://wordpress.org/plugins/wp-pagespeed-purge/)
 
-![Plugin License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/wp-pagespeed-purge/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-pagespeed-purge/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/salaros/wp-pagespeed-purge/badges/build.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-pagespeed-purge/build-status/master)
+![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)
+![Last GitHub Tag](https://img.shields.io/github/tag/salaros/wp-pagespeed-purge.svg?maxAge=2592000)
 
 One-click PageSpeed cache purging using an admin bar button
 
