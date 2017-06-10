@@ -9,6 +9,7 @@
 * License:     MIT
 * License URI: https://opensource.org/licenses/MIT
 * Text Domain: wp-pagespeed-purge
+* Domain Path: /languages/
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
@@ -21,6 +22,9 @@ class PageSpeedPurge {
 
 		// Add 'Clear Redis cache' button to the admin bar
 		add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_button' ), 101 );
+
+		// Load plugin textdomain
+		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
 	}
 
 	public function embed_admin_assets() {
@@ -33,11 +37,23 @@ class PageSpeedPurge {
 	public function add_admin_bar_button( $wp_admin_bar ) {
 		$args = [
 			'id'	=> 'pagespeed_purge',
-			'title' => 'Clear Pagespeed Cache',
-			'href' => '#pagespeed_purge',
+			'href'	=> '#pagespeed_purge',
+			'title'	=> __( 'Purge Pagespeed Cache', 'wp-pagespeed-purge' ),
 		];
 
 		$wp_admin_bar->add_menu( $args );
+	}
+
+	public function load_plugin_textdomain() {
+		$textdomain = 'wp-pagespeed-purge';
+		$plugin_locale = apply_filters( 'plugin_locale', get_locale(), $textdomain );
+		$plugin_dir = dirname( __FILE__ );
+
+		// wp-content/languages/plugin-name/plugin-name-ru_RU.mo
+		load_textdomain( $textdomain, sprintf( '%s/plugins/%s-%s.mo', WP_LANG_DIR , $textdomain, $plugin_locale ) );
+
+		// wp-content/plugins/plugin-name/languages/plugin-name-ru_RU.mo
+		load_textdomain( $textdomain, sprintf( '%s/languages/%s-%s.mo', $plugin_dir , $textdomain, $plugin_locale ) );
 	}
 }
 
