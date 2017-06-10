@@ -1,0 +1,4 @@
+ phpcodesniffer:
+    enabled: true
+    config:
+      standard: "WordPress-Extra"
