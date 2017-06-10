@@ -8,6 +8,7 @@
 * Author URI:  https://salaros.com
 * License:     MIT
 * License URI: https://opensource.org/licenses/MIT
+* Text Domain: wp-pagespeed-purge
 */
 
 defined( 'ABSPATH' ) or die( 'Nope, not accessing this' );
