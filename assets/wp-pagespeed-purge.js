@@ -15,10 +15,8 @@ jQuery( document ).ready( function( $ ) {
       })
       .done(function( msg ) {
         if (msg && msg.indexOf("successful") > -1) {
-          console.log('OK: ' + msg);
           pagespeed_purge_success(spinner);
         } else {
-          console.log('Failed: ' + msg);
           pagespeed_purge_error(spinner);
         }
       })
