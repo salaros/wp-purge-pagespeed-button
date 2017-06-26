@@ -1,5 +1,6 @@
 # [WP PageSpeed Purge Button](https://wordpress.org/plugins/wp-purge-pagespeed-button/)
 
+[![WordPress](https://img.shields.io/wordpress/plugin/dt/wp-purge-pagespeed-button.svg)](https://wordpress.org/support/plugin/wp-purge-pagespeed-button/)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/badges/build.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/build-status/master)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)
