@@ -1,0 +1,22 @@
+{
+    "name":         "salaros/wp-purge-pagespeed-button",
+    "license":      "MIT",
+    "description":  "One-click PageSpeed cache purging using an admin bar button",
+    "homepage":     "https://github.com/salaros/wp-purge-pagespeed-button",
+    "type":         "wordpress-plugin",
+    "keywords": [
+        "wordpress",
+        "cache",
+        "pagespeed",
+        "purge",
+        "button"
+    ],
+    "authors": [
+        {
+            "name": "Zhmayev Yaroslav",
+            "email": "salaros@salaros.com",
+            "homepage": "http://salaros.com",
+            "role": "Developer"
+        }
+    ]
+}
