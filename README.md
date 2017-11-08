@@ -7,9 +7,8 @@
 [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/wp-purge-pagespeed-button.svg)](https://wordpress.org/plugins/wp-purge-pagespeed-button/)
 
 [![Packagist type](https://img.shields.io/badge/Packagist-wordpress%20plugin-blue.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
-[![Packagist downloads](https://img.shields.io/packagist/dt/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 [![Packagist version](https://img.shields.io/packagist/v/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
-
+[![Packagist downloads](https://img.shields.io/packagist/dt/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f440bb3c-e483-44d5-a69d-0064a1212714.svg)](https://insight.sensiolabs.com/projects/f440bb3c-e483-44d5-a69d-0064a1212714)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/?branch=master)
