@@ -2,7 +2,7 @@
 Contributors: salaros
 Tags: google, pagespeed, mod_pagespeed, cache, purge, clear
 Requires at least: 4.5.0
-Tested up to: 4.8.3
+Tested up to: 4.9.0
 Stable tag: 1.0.3
 License: MIT
 License URI: https://opensource.org/licenses/MIT
