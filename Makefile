@@ -11,7 +11,7 @@ WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
 TEXTBOLD	:=$(shell tput bold)
 TEXTRESET 	:=$(shell tput sgr0)
 
-all: git_tag wp_ver
+all: git_tag wp_ver bump
 
 git_tag:
 	@printf "Setting plugin version to: $(TEXTBOLD)$(GIT_TAG)$(TEXTRESET)\n"
@@ -23,6 +23,11 @@ wp_ver:
             			python3 -c 'import sys, json; print(json.load(sys.stdin)["offers"][0]["current"])'))
 	@printf "Updating WordPress version to: $(TEXTBOLD)$(WP_VER)$(TEXTRESET)\n"
 	@sed -i 's/Tested up to: .*$$/Tested up to: $(WP_VER)/g' readme.txt
+
+bump:
+	@git add -f readme.txt
+	@git add -f $(PLUGIN_FILE)
+	@git commit -m "bumping plugin version to $(GIT_TAG)"
 
 sync_tags:
 	@{ \
