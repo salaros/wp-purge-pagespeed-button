@@ -33,7 +33,7 @@ One-click [PageSpeed module](https://developers.google.com/speed/pagespeed/modul
 * Latest Developer version: [Clone the GitHub repository](https://github.com/salaros/wp-purge-pagespeed-button.git) or [Download zip](https://github.com/salaros/wp-purge-pagespeed-button/archive/master.zip)
 
 ## Support
-This is a development reposiroty for `WP Performance Score Booster` and should _not_ be used for support. Please visit the [wordpress.org support forum](http://wordpress.org/support/plugin/wp-purge-pagespeed-button#postform) for any support request.
+This is a development reposiroty for `WP PageSpeed Purge Button` and should _not_ be used for support. Please visit the [wordpress.org support forum](http://wordpress.org/support/plugin/wp-purge-pagespeed-button#postform) for any support request.
 
 ## Contributions
 Anyone is welcome to contribute to the development of this plugin. There are various ways to do so:
