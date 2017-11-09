@@ -41,31 +41,3 @@ Anyone is welcome to contribute to the development of this plugin. There are var
 1. Found a bug? Raise an [issue](https://github.com/salaros/wp-purge-pagespeed-button/issues?direction=desc&labels=bug&page=1&sort=created&state=open) on GitHub.
 2. Send me a Pull Request with your bug fixes and/or new features.
 3. Provide feedback and suggestions on [enhancements](https://github.com/salaros/wp-purge-pagespeed-button/issues?direction=desc&labels=enhancement&page=1&sort=created&state=open).
-
-
-One-click PageSpeed cache purging using an admin bar button
-
-![alt text](/assets/how_to_use.gif "Logo Title Text 1")
-
-**This plugin will...**
-* Create a button on WP Admin Bar which allows one to purge Google PageSpeed module's cache [via PURGE HTTP request](https://modpagespeed.com/doc/system#purge_cache)
-
-## Installation
-* Download the stable version of plugin from wordpress.org repo or developer version from GitHub.
-* Upload the folder to the ‘/wp-content/plugins/‘ directory
-* Activate the plugin through the ‘Plugins’ menu in WordPress.
-* That’s it!
-
-#### Download links:
-* Latest Stable version: [wordpress.org repo](https://wordpress.org/plugins/wp-purge-pagespeed-button/)
-* Latest Developer version: [Clone the GitHub repository](https://github.com/salaros/wp-purge-pagespeed-button.git) or [Download zip](https://github.com/salaros/wp-purge-pagespeed-button/archive/master.zip)
-
-## Support
-This is a development reposiroty for `WP Performance Score Booster` and should _not_ be used for support. Please visit the [wordpress.org support forum](http://wordpress.org/support/plugin/wp-purge-pagespeed-button#postform) for any support request.
-
-## Contributions
-Anyone is welcome to contribute to the development of this plugin. There are various ways to do so:
-
-1. Found a bug? Raise an [issue](https://github.com/salaros/wp-purge-pagespeed-button/issues?direction=desc&labels=bug&page=1&sort=created&state=open) on GitHub.
-2. Send me a Pull Request with your bug fixes and/or new features.
-3. Provide feedback and suggestions on [enhancements](https://github.com/salaros/wp-purge-pagespeed-button/issues?direction=desc&labels=enhancement&page=1&sort=created&state=open).
