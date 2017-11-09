@@ -8,8 +8,8 @@ all: git_tag wp_ver
 
 git_tag:
 	@printf "Setting plugin version to: $(TEXTBOLD)$(GIT_TAG)$(TEXTRESET)\n"
-	@sed -i 's/Tested up to: .*$$/Tested up to: $(GIT_TAG)/g' readme.txt
+	@sed -i 's/Stable tag: .*$$/Stable tag: $(GIT_TAG)/g' readme.txt
 
 wp_ver:
 	@printf "Updating WordPress version to: $(TEXTBOLD)$(WP_VER)$(TEXTRESET)\n"
-	@sed -i 's/Stable tag: .*$$/Stable tag: $(WP_VER)/g' readme.txt
+	@sed -i 's/Tested up to: .*$$/Tested up to: $(WP_VER)/g' readme.txt
