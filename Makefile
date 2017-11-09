@@ -1,3 +1,5 @@
+PLUGIN_FILE = wp-pagespeed-purge.php
+
 GIT_TAG		:= $(shell git tag | sort -n | tail -1)
 WP_VER		:= $(shell curl -s 'https://api.wordpress.org/core/version-check/1.7/' | \
             			python3 -c 'import sys, json; print(json.load(sys.stdin)["offers"][0]["current"])')
@@ -9,6 +11,8 @@ all: git_tag wp_ver
 git_tag:
 	@printf "Setting plugin version to: $(TEXTBOLD)$(GIT_TAG)$(TEXTRESET)\n"
 	@sed -i 's/Stable tag: .*$$/Stable tag: $(GIT_TAG)/g' readme.txt
+	@sed -i 's/Version:     .*$$/Version:     $(GIT_TAG)/g' $(PLUGIN_FILE)
+	
 
 wp_ver:
 	@printf "Updating WordPress version to: $(TEXTBOLD)$(WP_VER)$(TEXTRESET)\n"
