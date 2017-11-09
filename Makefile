@@ -3,7 +3,7 @@ PLUGIN_FILE = wp-pagespeed-purge.php
 GITHUB_REPO = http://github.com/salaros/wp-purge-pagespeed-button
 GIT_TAGS_DIR = ../tags
 GIT_TAGS	:= $(shell git tag)
-GIT_TAG 	:= $(shell git tag | sort -n | tail -1)
+GIT_TAG 	:= $(shell echo $$(git tag | sort -n | tail -1) | perl -pe 's/^((\d+\.)*)(\d+)(.*)$$/$$1.($$3+1).$$4/e')
 
 WP_VER		:= 0.0.0
 WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
