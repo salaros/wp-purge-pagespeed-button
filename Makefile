@@ -30,6 +30,13 @@ git_bump:
 	@git add -f $(PLUGIN_FILE)
 	@git commit -m "bumping plugin version to $(GIT_TAG)"
 
+# Usage: make svn_bump SVN_PWD=<SVN password>
+svn_bump:
+	@test $(SVN_PWD)
+	$(eval SVN_MSG = bumping plugin version to $(GIT_TAG))
+	@svn add --force $(GIT_TAGS_DIR)/$(GIT_TAG)
+	@svn commit -m "$(SVN_MSG)" --non-interactive --no-auth-cache --password $(SVN_PWD) $(GIT_TAGS_DIR)/$(GIT_TAG)
+
 sync_tags:
 	@{ \
 		GIT_TAGS_SYNCHED=0																						;\
