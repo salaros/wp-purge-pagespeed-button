@@ -3,7 +3,7 @@
 * Plugin Name: PageSpeed Purge Button
 * Plugin URI:  https://github.com/salaros/wp-pagespeed-purge
 * Description: One-click PageSpeed cache purging using an admin bar button
-* Version:     1.0.4
+* Version:     1.0.5
 * Author:      Zhmayev Yaroslav aka Salaros
 * Author URI:  https://salaros.com
 * License:     MIT
