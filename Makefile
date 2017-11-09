@@ -3,7 +3,7 @@ PLUGIN_FILE = wp-pagespeed-purge.php
 GITHUB_REPO = http://github.com/salaros/wp-purge-pagespeed-button
 GIT_TAGS_DIR = ../tags
 GIT_TAGS	:= $(shell git tag)
-GIT_TAG 	:= $(shell echo $$(git tag | sort -n | tail -1) | perl -pe 's/^((\d+\.)*)(\d+)(.*)$$/$$1.($$3+1).$$4/e')
+GIT_TAG 	:= $(shell git tag | sort -n | tail -1)
 
 WP_VER		:= 0.0.0
 WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
@@ -14,6 +14,7 @@ TEXTRESET 	:=$(shell tput sgr0)
 all: git_tag wp_ver bump
 
 git_tag:
+	$(eval GIT_TAG := $(shell echo $(GIT_TAG) | perl -pe 's/^((\d+\.)*)(\d+)(.*)$$/$$1.($$3+1).$$4/e'))
 	@printf "Setting plugin version to: $(TEXTBOLD)$(GIT_TAG)$(TEXTRESET)\n"
 	@sed -i 's/Stable tag: .*$$/Stable tag: $(GIT_TAG)/g' readme.txt
 	@sed -i 's/Version:     .*$$/Version:     $(GIT_TAG)/g' $(PLUGIN_FILE)
