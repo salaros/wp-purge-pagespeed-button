@@ -11,9 +11,9 @@ WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
 TEXTBOLD	:=$(shell tput bold)
 TEXTRESET 	:=$(shell tput sgr0)
 
-all: git_tag wp_ver bump
+all: plugin_ver wp_ver git_bump
 
-git_tag:
+plugin_ver:
 	$(eval GIT_TAG := $(shell echo $(GIT_TAG) | perl -pe 's/^((\d+\.)*)(\d+)(.*)$$/$$1.($$3+1).$$4/e'))
 	@printf "Setting plugin version to: $(TEXTBOLD)$(GIT_TAG)$(TEXTRESET)\n"
 	@sed -i 's/Stable tag: .*$$/Stable tag: $(GIT_TAG)/g' readme.txt
@@ -25,7 +25,7 @@ wp_ver:
 	@printf "Updating WordPress version to: $(TEXTBOLD)$(WP_VER)$(TEXTRESET)\n"
 	@sed -i 's/Tested up to: .*$$/Tested up to: $(WP_VER)/g' readme.txt
 
-bump:
+git_bump:
 	@git add -f readme.txt
 	@git add -f $(PLUGIN_FILE)
 	@git commit -m "bumping plugin version to $(GIT_TAG)"
