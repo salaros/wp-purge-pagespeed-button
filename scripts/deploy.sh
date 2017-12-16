@@ -11,17 +11,9 @@ if [[ -z "${SVN_REPO_SLUG}" ]] ; then
 fi
 
 GIT_ROOT_DIR=$(pwd)
-BUILD_DIR=${GIT_ROOT_DIR}/build
+BUILD_DIR=${GIT_ROOT_DIR}/svn
 SVN_ROOT_DIR=${BUILD_DIR}/$(basename ${SVN_REPO_SLUG})
 SVN_TAG_DIR=${SVN_ROOT_DIR}/tags/${TRAVIS_TAG}
-
-# Create the build folder
-mkdir -pv ${BUILD_DIR}
-cd ${BUILD_DIR}
-
-# Clone SVN repository into the build folder
-[[ ! -d ${SVN_ROOT_DIR} ]] && svn co -q https://plugins.svn.wordpress.org/${SVN_REPO_SLUG}/
-cd ${SVN_ROOT_DIR}
 
 # Sync SVN trunk with Git repo
 rsync -qav --checksum --delete ${GIT_ROOT_DIR}/assets ${SVN_ROOT_DIR}/
