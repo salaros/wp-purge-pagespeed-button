@@ -29,6 +29,8 @@ git_bump:
 	@git add -f readme.txt
 	@git add -f $(PLUGIN_FILE)
 	@git commit -m "bumping plugin version to $(GIT_TAG)"
+	@git tag $(GIT_TAG)
+	@git push -f --tags
 
 # Usage: make svn_bump SVN_PWD=<SVN password>
 svn_bump:
