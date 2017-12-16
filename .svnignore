@@ -1,6 +1,6 @@
 .git/
 .vscode/
-build/
+svn/
 node_modules/
 tests/
 docs/
