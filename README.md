@@ -10,9 +10,10 @@
 [![Packagist version](https://img.shields.io/packagist/v/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 [![Packagist downloads](https://img.shields.io/packagist/dt/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 
+[![Build Status](https://travis-ci.org/salaros/wp-purge-pagespeed-button.svg?branch=master)](https://travis-ci.org/salaros/wp-purge-pagespeed-button)
+[![Build Status](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/badges/build.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/build-status/master)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f440bb3c-e483-44d5-a69d-0064a1212714.svg)](https://insight.sensiolabs.com/projects/f440bb3c-e483-44d5-a69d-0064a1212714)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/badges/build.png?b=master)](https://scrutinizer-ci.com/g/salaros/wp-purge-pagespeed-button/build-status/master)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)
 
 One-click [PageSpeed module](https://developers.google.com/speed/pagespeed/module/) cache purging using a button on [WordPress Admin Bar](https://codex.wordpress.org/Toolbar) 
