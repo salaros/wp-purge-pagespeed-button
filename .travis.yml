@@ -2,6 +2,10 @@ os: linux
 dist: trusty
 sudo: false
 
+language: php
+php:
+  - '7.1'
+
 env:
   global:
     - SVN_REPO_SLUG: wp-purge-pagespeed-button
