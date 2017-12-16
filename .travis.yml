@@ -21,6 +21,7 @@ script:
   - cd $TRAVIS_BUILD_DIR/svn/$SVN_REPO_SLUG/
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: scripts/deploy.sh
   on:
