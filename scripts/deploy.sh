@@ -15,6 +15,7 @@ SVN_ROOT_DIR=${BUILD_DIR}/$(basename ${SVN_REPO_SLUG})
 SVN_TAG_DIR=${SVN_ROOT_DIR}/tags/${TRAVIS_TAG}
 
 # Sync SVN trunk with Git repo
+cd ${SVN_ROOT_DIR}
 rsync -av --checksum --delete ${TRAVIS_BUILD_DIR}/assets ${SVN_ROOT_DIR}/
 rsync -av --checksum --delete --exclude-from=${TRAVIS_BUILD_DIR}/.svnignore ${TRAVIS_BUILD_DIR}/./ ${SVN_ROOT_DIR}/trunk
 cd ${SVN_ROOT_DIR}/trunk
