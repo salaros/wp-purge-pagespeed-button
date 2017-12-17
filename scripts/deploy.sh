@@ -10,29 +10,16 @@ if [[ -z "${SVN_REPO_SLUG}" ]] ; then
     exit 1;
 fi
 
-BUILD_DIR=${TRAVIS_BUILD_DIR}/svn
-SVN_ROOT_DIR=${BUILD_DIR}/$(basename ${SVN_REPO_SLUG})
-SVN_TAG_DIR=${SVN_ROOT_DIR}/tags/${TRAVIS_TAG}
-GIT_MESSAGE=$(git log -1 --pretty=%B)
-
-# Sync SVN trunk with Git repo
-cd ${SVN_ROOT_DIR}
-rsync -av --checksum --delete ${TRAVIS_BUILD_DIR}/assets ${SVN_ROOT_DIR}/
-rsync -av --checksum --delete --exclude-from=${TRAVIS_BUILD_DIR}/.svnignore ${TRAVIS_BUILD_DIR}/./ ${SVN_ROOT_DIR}/trunk
-cd ${SVN_ROOT_DIR}/trunk
-svn -q propset -R svn:ignore -F ${TRAVIS_BUILD_DIR}/.svnignore ${SVN_ROOT_DIR}/trunk # 2>/dev/null
-echo "Run svn add"
-svn st | grep '^!' | sed -e 's/\![ ]*/svn del -q /g' | sh
-echo "Run svn del"
-svn st | grep '^?' | sed -e 's/\?[ ]*/svn add -q /g' | sh
-svn commit -m "synched Git repo to SVN: ${GIT_MESSAGE}" --username ${SVN_USER} --password ${SVN_PASS} --non-interactive --no-auth-cache # 2>/dev/null
-
 # Go out if Travis CI Git tag-related 
 # environment variable is not set
 if [ -z ${TRAVIS_TAG} ]; then
     echo "Skipping SVN tag creation since it's not a tag-tiggered build"
     exit 0;
 fi
+
+BUILD_DIR=${TRAVIS_BUILD_DIR}/svn
+SVN_ROOT_DIR=${BUILD_DIR}/$(basename ${SVN_REPO_SLUG})
+SVN_TAG_DIR=${SVN_ROOT_DIR}/tags/${TRAVIS_TAG}
 
 # Copy SVN trunk to a tag and commit it
 rsync -av --checksum --delete ${SVN_ROOT_DIR}/trunk/./ ${SVN_TAG_DIR}

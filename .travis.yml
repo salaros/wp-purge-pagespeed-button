@@ -16,6 +16,12 @@ install: true
 script:
   - make wp_ver             # Update to the latest WordPress version
 
+after_success:
+  # Sync Git repo to SVN
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x ./scripts/git-2-svn-sync.sh
+  - ./scripts/git-2-svn-sync.sh 
+
 before_deploy:
   - make plugin_ver         # Bump plugin version
   - make svn_clone          # Clone SVN repository into the build folder
