@@ -18,13 +18,13 @@ script:
 
 after_success:
   # Sync Git repo to SVN
+  - make svn_clone          # Clone SVN repository into the build folder
   - cd $TRAVIS_BUILD_DIR
   - chmod +x ./scripts/git-2-svn-sync.sh
   - ./scripts/git-2-svn-sync.sh 
 
 before_deploy:
   - make plugin_ver         # Bump plugin version
-  - make svn_clone          # Clone SVN repository into the build folder
   - cd $TRAVIS_BUILD_DIR
   - chmod +x ./scripts/deploy.sh
 
