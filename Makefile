@@ -19,5 +19,4 @@ wp_ver:
 
 svn_clone:
 	@mkdir -pv $(TRAVIS_BUILD_DIR)/svn
-	@cd $(TRAVIS_BUILD_DIR)/svn
-	@svn co -q https://plugins.svn.wordpress.org/$(SVN_REPO_SLUG)/
+	@svn co -q https://plugins.svn.wordpress.org/$(SVN_REPO_SLUG)/ $(TRAVIS_BUILD_DIR)/svn/$(SVN_REPO_SLUG)
