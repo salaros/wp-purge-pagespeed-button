@@ -21,6 +21,10 @@ rsync -av --checksum --delete ${TRAVIS_BUILD_DIR}/assets ${SVN_ROOT_DIR}/
 rsync -av --checksum --delete --exclude-from=${TRAVIS_BUILD_DIR}/.svnignore ${TRAVIS_BUILD_DIR}/./ ${SVN_ROOT_DIR}/trunk
 cd ${SVN_ROOT_DIR}/trunk
 svn -q propset -R svn:ignore -F ${TRAVIS_BUILD_DIR}/.svnignore ${SVN_ROOT_DIR}/trunk # 2>/dev/null
+echo "Run svn add"
+svn st | grep '^!' | sed -e 's/\![ ]*/svn del -q /g' | sh
+echo "Run svn del"
+svn st | grep '^?' | sed -e 's/\?[ ]*/svn add -q /g' | sh
 svn commit -m "synched Git repo to SVN: ${GIT_MESSAGE}" --username ${SVN_USER} --password ${SVN_PASS} --non-interactive --no-auth-cache # 2>/dev/null
 
 # Go out if Travis CI Git tag-related 
