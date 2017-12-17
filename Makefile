@@ -1,4 +1,4 @@
-PLUGIN_FILE = $(SVN_REPO_SLUG).php
+PLUGIN_FILE = wp-pagespeed-purge.php
 
 WP_VER		:= 0.0.0
 WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
