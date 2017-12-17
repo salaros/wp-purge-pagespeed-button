@@ -18,6 +18,6 @@ wp_ver:
 	@sed -i 's/Tested up to: .*$$/Tested up to: $(WP_VER)/g' readme.txt
 
 svn_clone:
-	@mkdir -pv $TRAVIS_BUILD_DIR/svn
-	@cd $TRAVIS_BUILD_DIR/svn
-	@svn co -q https://plugins.svn.wordpress.org/$SVN_REPO_SLUG/
+	@mkdir -pv $(TRAVIS_BUILD_DIR)/svn
+	@cd $(TRAVIS_BUILD_DIR)/svn
+	@svn co -q https://plugins.svn.wordpress.org/$(SVN_REPO_SLUG)/
