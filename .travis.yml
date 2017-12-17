@@ -14,10 +14,16 @@ env:
 install: true
 
 script:
-  # Clone SVN repository into the build folder
-  - mkdir -pv $TRAVIS_BUILD_DIR/svn
-  - cd $TRAVIS_BUILD_DIR/svn
-  - svn co -q https://plugins.svn.wordpress.org/$SVN_REPO_SLUG/
+  - make wp_ver             # Update to the latest WordPress version
+
+  # Bump plugin version if needed
+  - if [ -z $TRAVIS_TAG ];
+    then make plugin_ver;
+    fi
+  
+  - make svn_clone          # Clone SVN repository into the build folder
+
+before_deploy:
   - cd $TRAVIS_BUILD_DIR
   - chmod +x ./scripts/deploy.sh
 
