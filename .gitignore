@@ -1,2 +1,4 @@
 *.log
 svn/*
+*.css
+*.css.map
