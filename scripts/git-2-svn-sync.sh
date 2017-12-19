@@ -10,6 +10,11 @@ if [[ -z "${SVN_REPO_SLUG}" ]] ; then
     exit 1;
 fi
 
+# Bump plugin version if needed
+if [ ! -z ${TRAVIS_TAG} ]; then
+    make plugin_ver
+fi
+
 BUILD_DIR=${TRAVIS_BUILD_DIR}/svn
 SVN_ROOT_DIR=${BUILD_DIR}/$(basename ${SVN_REPO_SLUG})
 GIT_MESSAGE=$(git log -1 --pretty=%B)
