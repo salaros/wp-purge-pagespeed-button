@@ -6,7 +6,7 @@
 [![WordPress](https://img.shields.io/wordpress/plugin/dt/wp-purge-pagespeed-button.svg)](https://wordpress.org/support/plugin/wp-purge-pagespeed-button/)
 [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/wp-purge-pagespeed-button.svg)](https://wordpress.org/plugins/wp-purge-pagespeed-button/)
 
-[![Packagist type](https://img.shields.io/badge/Packagist-wordpress%20plugin-blue.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
+[![Packagist type](https://img.shields.io/badge/Packagist-wordpress%20plugin-blue.svg?maxAge=3600)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 [![Packagist version](https://img.shields.io/packagist/v/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 [![Packagist downloads](https://img.shields.io/packagist/dt/salaros/wp-purge-pagespeed-button.svg)](https://packagist.org/packages/salaros/wp-purge-pagespeed-button)
 
