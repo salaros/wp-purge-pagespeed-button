@@ -15,7 +15,6 @@ scripts/
 .svnignore
 composer.json
 composer.lock
-gulpfile.js
 Makefile
 package.json
 package-lock.json
