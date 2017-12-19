@@ -11,10 +11,12 @@ env:
     - SVN_REPO_SLUG: wp-purge-pagespeed-button
     - secure: Lt3tM0B4p1ftja318gq81eojYCUxTJbiVmku0AJIsirzXsjr68u6ntCs9ObqUcFPOI1aygcIAFgsr7L7FWf24sr7WNkoVD6X3pyqFAPdyXE3sv/kQC1JCdu4E+xg+/ddJXfrwfV7PakPXLN79gZCBnqzyz227DWRq53Z66YthJb+Q9vn80pUnYDyjzb4MTIhQ4QmNT8Ok51ygPBpmmaovrL74U3nernpHwbsFpQZ5HFYC2cmTpJXgzWLZ2+IYe/Gjvzh1cfPQI0PPEM1Zt0S5wnBTzn3u3SxjuK9FkUcAsQVf/zfigkhNJnXAe8Rbyk7e5hsh+Yn8sX6L/+SuuW6bAvMNWcEA3PrSOjXnfpqatcGl5AogrMK2Kj8VZjU9Dgfhnc+YUirAbwZK/YCsRy2VCcxSaKDIMC3T3iJrEdKmA+m+GOzuJQDKOUfM/2v5aEkPI4yHMCj+XnBmy+8l4//U0biz2otip3NUl2tH7bdqOSSanNPVyFsCkQr80CVCXoxkLMsx1xRxnyJSZ4PX7aqQWZbd0nFUHIvuzNG3nrVu1/nNb9CQq/nHRojJeKW0akyRvA+iiy93z8QwdesDt9h4W77uOB/UVAdh02UKHP4OV7b+ZGm89pyyQNsDoTRyzfoGMLkJR+5R9RLUf494MLpq4/8nc8edintdlMQ8ZVL1gc=
 
-install: true
+install:
+  - npm install --only=dev && gulp --version
 
 script:
   - make wp_ver             # Update to the latest WordPress version
+  - gulp
 
 after_success:
   # Sync Git repo to SVN
