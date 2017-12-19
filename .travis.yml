@@ -23,7 +23,7 @@ after_success:
   - make svn_clone          # Clone SVN repository into the build folder
   - cd $TRAVIS_BUILD_DIR
   - chmod +x ./scripts/git-2-svn-sync.sh
-  - ./scripts/git-2-svn-sync.sh 
+  - "./scripts/git-2-svn-sync.sh"
 
 before_deploy:
   - cd $TRAVIS_BUILD_DIR
