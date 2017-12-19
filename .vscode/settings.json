@@ -2,5 +2,7 @@
 {
     "phpcs.standard": "WordPress-Extra",
     "files.exclude": {
+        "node_modules"      : true,
+        "languages/*.mo"    : true
     }
 }
