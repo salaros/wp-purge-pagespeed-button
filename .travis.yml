@@ -26,7 +26,6 @@ after_success:
   - ./scripts/git-2-svn-sync.sh 
 
 before_deploy:
-  - make plugin_ver         # Bump plugin version
   - cd $TRAVIS_BUILD_DIR
   - chmod +x ./scripts/deploy.sh
 
