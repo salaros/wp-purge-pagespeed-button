@@ -2,6 +2,7 @@
 .vscode/
 svn/
 node_modules/
+vendor/
 tests/
 docs/
 scripts/

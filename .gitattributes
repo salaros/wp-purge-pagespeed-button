@@ -1,6 +1,7 @@
 .vscode/**/*        export-ignore
 build/**/*          export-ignore
 node_modules/**/*   export-ignore
+vendor/**/*         export-ignore
 tests/**/*          export-ignore
 docs/**/*           export-ignore
 scripts/**/*        export-ignore
