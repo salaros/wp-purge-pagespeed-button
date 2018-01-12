@@ -19,15 +19,15 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    .spin::after {
+    &.spin::after {
         content: "\f463";
         animation: animate-spin 1s infinite;
         animation-timing-function: linear;
     }
-    .success::after {
+    &.success::after {
         content: "\f147";
     }
-    .error::after {
+    &.error::after {
         content: "\f158";
     }
 }
