@@ -14,7 +14,7 @@ env:
 
 install:
   - npm install -g gulp-cli gulp
-  - npm install --dev && gulp -v
+  - npm install --only=dev && gulp -v
 
 script:
   - make wp_ver             # Update to the latest WordPress version
