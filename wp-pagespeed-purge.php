@@ -20,7 +20,7 @@ class PageSpeedPurge {
 
 	public function __construct() {
 		// Enqueue css and js files
-		if( ! is_admin() && is_admin_bar_showing() ) {
+		if ( ! is_admin() && is_admin_bar_showing() ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'embed_admin_assets' ), 101 );
 		} else {
 			add_action( 'admin_enqueue_scripts', array( $this, 'embed_admin_assets' ), 101 );
@@ -57,13 +57,13 @@ class PageSpeedPurge {
 		$plugin_dir = dirname( __FILE__ );
 
 		// wp-content/languages/plugin-name/plugin-name-ru_RU.mo
-		load_textdomain( $textdomain, sprintf( '%s/plugins/%s-%s.mo', WP_LANG_DIR , $textdomain, $plugin_locale ) );
+		load_textdomain( $textdomain, sprintf( '%s/plugins/%s-%s.mo', WP_LANG_DIR, $textdomain, $plugin_locale ) );
 
 		// wp-content/plugins/plugin-name/languages/plugin-name-ru_RU.mo
-		load_textdomain( $textdomain, sprintf( '%s/languages/%s-%s.mo', $plugin_dir , $textdomain, $plugin_locale ) );
+		load_textdomain( $textdomain, sprintf( '%s/languages/%s-%s.mo', $plugin_dir, $textdomain, $plugin_locale ) );
 	}
 }
 
 add_action( 'plugins_loaded', function () {
-    new PageSpeedPurge();
+	new PageSpeedPurge();
 } );
