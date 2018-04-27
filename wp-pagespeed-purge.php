@@ -20,7 +20,11 @@ class PageSpeedPurge {
 
 	public function __construct() {
 		// Enqueue css and js files
-		add_action( 'admin_enqueue_scripts', array( $this, 'embed_admin_assets' ), 101 );
+		if( ! is_admin() && is_admin_bar_showing() ) {
+			add_action( 'wp_enqueue_scripts', array( $this, 'embed_admin_assets' ), 101 );
+		} else {
+			add_action( 'admin_enqueue_scripts', array( $this, 'embed_admin_assets' ), 101 );
+		}
 
 		// Add 'Clear Redis cache' button to the admin bar
 		add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_button' ), 101 );
@@ -60,4 +64,6 @@ class PageSpeedPurge {
 	}
 }
 
-new PageSpeedPurge();
+add_action( 'plugins_loaded', function () {
+    new PageSpeedPurge();
+} );
