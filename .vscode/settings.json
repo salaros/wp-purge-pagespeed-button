@@ -1,6 +1,12 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "phpcs.standard": "WordPress-Extra",
+    // PHP Mess Detector settings
+    "phpmd.rules": ".vscode/phpmd.xml",
+
+    // PHP CodeSniffer settings
+    "phpcs.enable": true,
+    "phpcs.standard": ".vscode/phpcs.xml",
+
     "files.exclude": {
         "node_modules"      : true,
         "languages/*.mo"    : true,
