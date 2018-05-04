@@ -4,37 +4,39 @@ sudo: false
 
 language: php
 php:
-  - '7.1'
+- '7.1'
 
 env:
   global:
-    - SVN_REPO_SLUG: wp-purge-pagespeed-button
-    - secure: Lt3tM0B4p1ftja318gq81eojYCUxTJbiVmku0AJIsirzXsjr68u6ntCs9ObqUcFPOI1aygcIAFgsr7L7FWf24sr7WNkoVD6X3pyqFAPdyXE3sv/kQC1JCdu4E+xg+/ddJXfrwfV7PakPXLN79gZCBnqzyz227DWRq53Z66YthJb+Q9vn80pUnYDyjzb4MTIhQ4QmNT8Ok51ygPBpmmaovrL74U3nernpHwbsFpQZ5HFYC2cmTpJXgzWLZ2+IYe/Gjvzh1cfPQI0PPEM1Zt0S5wnBTzn3u3SxjuK9FkUcAsQVf/zfigkhNJnXAe8Rbyk7e5hsh+Yn8sX6L/+SuuW6bAvMNWcEA3PrSOjXnfpqatcGl5AogrMK2Kj8VZjU9Dgfhnc+YUirAbwZK/YCsRy2VCcxSaKDIMC3T3iJrEdKmA+m+GOzuJQDKOUfM/2v5aEkPI4yHMCj+XnBmy+8l4//U0biz2otip3NUl2tH7bdqOSSanNPVyFsCkQr80CVCXoxkLMsx1xRxnyJSZ4PX7aqQWZbd0nFUHIvuzNG3nrVu1/nNb9CQq/nHRojJeKW0akyRvA+iiy93z8QwdesDt9h4W77uOB/UVAdh02UKHP4OV7b+ZGm89pyyQNsDoTRyzfoGMLkJR+5R9RLUf494MLpq4/8nc8edintdlMQ8ZVL1gc=
-    - secure: QzT2Va9Az89+Gb5WfBUY2NDdcq+At/vJpGdbXMoJ4ulmURGkgQFI6ovpzSVNCSy3mYBce+Ng+JgP8Zjyw+AqU/JQU8Hp6GLT7zb+H7jKajyhnflO7Zr1Nv+ENpRW3RWWlqAdcQ7ddSUBfvvmuJz2oZ5Vg2dI4ynhq6D/cH7SX8Z7PAHIvQCnMZnC/9tbn1RXW4ARjY8L7SHiguXEkZX43YNGMgLZR3MSav91jU28/E4VDmfgk4RcNR0o9YfKUnatUBb5bdKM3lmN/CGsyk5yq22O6Rq+0Fa3X55uuah4/bYfq7HwR5052bsS74jUMNPCC11GQ9RnP5gU9nFFsRnD2OI9gQSTHIgueTbHIz5Qa/0Iu4YWVM3UGHyJ64+0jdTEkpad3MjHOJ20FhZPgQiU8GwXftznEzZ+E4jyDJntn+iwaz/vufrb4PiY7rz53N4GZLx7DWUx5UNhewRIHyFZadYIywZ/5ldaNLhTMh3QkyOA9ThgLIPIiE7mzpwyVHXUgn4KRka/fMsHfFa+DGFX/kHUFbmif3m5qVpQRm0gF2zCOAEjWYSnk1PbXxTxAU+938eds6UvUgSRVKBU7l77/wPGzQlhHxUElX+zdfI0VzQkDm4NWPIrFjZmiIqdPt7tVyWfB7AOc6zmGgHsDaR/XjqE5EvEk5PWy1YKvXakqDo=
+  - SVN_REPO_SLUG: wp-purge-pagespeed-button
+  - secure: Lt3tM0B4p1ftja318gq81eojYCUxTJbiVmku0AJIsirzXsjr68u6ntCs9ObqUcFPOI1aygcIAFgsr7L7FWf24sr7WNkoVD6X3pyqFAPdyXE3sv/kQC1JCdu4E+xg+/ddJXfrwfV7PakPXLN79gZCBnqzyz227DWRq53Z66YthJb+Q9vn80pUnYDyjzb4MTIhQ4QmNT8Ok51ygPBpmmaovrL74U3nernpHwbsFpQZ5HFYC2cmTpJXgzWLZ2+IYe/Gjvzh1cfPQI0PPEM1Zt0S5wnBTzn3u3SxjuK9FkUcAsQVf/zfigkhNJnXAe8Rbyk7e5hsh+Yn8sX6L/+SuuW6bAvMNWcEA3PrSOjXnfpqatcGl5AogrMK2Kj8VZjU9Dgfhnc+YUirAbwZK/YCsRy2VCcxSaKDIMC3T3iJrEdKmA+m+GOzuJQDKOUfM/2v5aEkPI4yHMCj+XnBmy+8l4//U0biz2otip3NUl2tH7bdqOSSanNPVyFsCkQr80CVCXoxkLMsx1xRxnyJSZ4PX7aqQWZbd0nFUHIvuzNG3nrVu1/nNb9CQq/nHRojJeKW0akyRvA+iiy93z8QwdesDt9h4W77uOB/UVAdh02UKHP4OV7b+ZGm89pyyQNsDoTRyzfoGMLkJR+5R9RLUf494MLpq4/8nc8edintdlMQ8ZVL1gc=
+  - secure: QzT2Va9Az89+Gb5WfBUY2NDdcq+At/vJpGdbXMoJ4ulmURGkgQFI6ovpzSVNCSy3mYBce+Ng+JgP8Zjyw+AqU/JQU8Hp6GLT7zb+H7jKajyhnflO7Zr1Nv+ENpRW3RWWlqAdcQ7ddSUBfvvmuJz2oZ5Vg2dI4ynhq6D/cH7SX8Z7PAHIvQCnMZnC/9tbn1RXW4ARjY8L7SHiguXEkZX43YNGMgLZR3MSav91jU28/E4VDmfgk4RcNR0o9YfKUnatUBb5bdKM3lmN/CGsyk5yq22O6Rq+0Fa3X55uuah4/bYfq7HwR5052bsS74jUMNPCC11GQ9RnP5gU9nFFsRnD2OI9gQSTHIgueTbHIz5Qa/0Iu4YWVM3UGHyJ64+0jdTEkpad3MjHOJ20FhZPgQiU8GwXftznEzZ+E4jyDJntn+iwaz/vufrb4PiY7rz53N4GZLx7DWUx5UNhewRIHyFZadYIywZ/5ldaNLhTMh3QkyOA9ThgLIPIiE7mzpwyVHXUgn4KRka/fMsHfFa+DGFX/kHUFbmif3m5qVpQRm0gF2zCOAEjWYSnk1PbXxTxAU+938eds6UvUgSRVKBU7l77/wPGzQlhHxUElX+zdfI0VzQkDm4NWPIrFjZmiIqdPt7tVyWfB7AOc6zmGgHsDaR/XjqE5EvEk5PWy1YKvXakqDo=
+  - secure: rnolaRh1TnThZEFr4lj2jbXva8t07wjiRNT3BAVrxzVpLg+yqv4NykyAutU5URpybpVUkISVRsaDX2d5p4Cnh6N+A3plrda5m2QRXVok5Havyvj/ormtXH+jQdbaUvI+oGlF4QlY6BJhxQsrBCGCued8eWUINmwTv6oOg5aMiy4L5yL1itxqJiIF5btACVYuvPKOi3KZeLdf1B9SPnn0aXX6E12ShETp6ZUyIScrMW+2FGsDPGL0ktIzm6AhlYUIwrjPwLOPkXbICrDrv20OpHfJeRWJ2e1KW199AFnUa/oQE27WjVwF8sClj3g8QMsLG5LV9ZkkOU02uBhcoThfrtYwW1kvCFtkxc1HSwZiKtEQSe7qdwFqXcf0qKfWFJy76Lwa7kbMZWdk46K64ULhX5Jq24yR+fUIvERFZbBU6GZ+9yQI+1HDNqY0YJ7gB8RS9E7Wb137VHEigBwtRn3lgcwZ6dAOq/GoIxEPfSA7YUKFjqlS55YTj5vB1LOTRAdsPXY8nnPIOoy2S9dgRCwEefzC/9VQSpyrqTOVFOAuNIIlrwZACKTuL94lDnCrpvqyywI2krtneuY4d3XbMde6sfMDnz6mYJD5nm1ZIWrmEZezQKuq3Lqg2/kJmTbiLLjFHcTnMRdjfGPBA2rgCJgTrdp1zsaSa/BVkOgFNWEUS3Y=
 
 install:
-  - npm install -g gulp-cli gulp
-  - npm install --only=dev && gulp -v
+- npm install -g gulp-cli gulp
+- npm install --only=dev && gulp -v
 
 script:
-  - make wp_ver             # Update to the latest WordPress version
-  - gulp
+- make wp_ver             # Update to the latest WordPress version
+- gulp
 
 after_success:
-  # Sync Git repo to SVN
-  - make svn_clone          # Clone SVN repository into the build folder
-  - cd $TRAVIS_BUILD_DIR
-  - chmod +x ./scripts/git-2-svn-sync.sh
-  - "./scripts/git-2-svn-sync.sh"
+# Sync Git repo to SVN
+- make svn_clone          # Clone SVN repository into the build folder
+- cd $TRAVIS_BUILD_DIR
+- chmod +x ./scripts/git-2-svn-sync.sh
+- "./scripts/git-2-svn-sync.sh"
 
 before_deploy:
-  - cd $TRAVIS_BUILD_DIR
-  - chmod +x ./scripts/deploy.sh
+- cd $TRAVIS_BUILD_DIR
+- chmod +x ./scripts/deploy.sh
+- chmod +x ./scripts/git-push-back.sh
 
 deploy:
   skip_cleanup: true
   provider: script
-  script: ./scripts/deploy.sh
+  script: "./scripts/deploy.sh && ./scripts/git-push-back.sh"
   on:
     tags: true
     branch: master

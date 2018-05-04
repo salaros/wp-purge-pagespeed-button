@@ -23,17 +23,23 @@ SVN_TAG_DIR=${SVN_ROOT_DIR}/tags/${TRAVIS_TAG}
 SVN_TRUNK_DIR=${SVN_ROOT_DIR}/trunk
 
 # Bump plugin version
+cd ${SVN_TRUNK_DIR}
 make plugin_ver
 
-# ================  SVN TRUNK  ======++=========
+
+# ================  SVN TRUNK  =================
+echo "Updating SVN trunk"
+
 # Add stuff to SVN to ignore list
 svn -q propset -R svn:ignore -F ${TRAVIS_BUILD_DIR}/.svnignore ${SVN_TRUNK_DIR} # 2>/dev/null
 
 # Add stuff to SVN and commit files
-svn add --force ${SVN_TAG_DIR}/ # 2>/dev/null
+svn add --force ${SVN_TRUNK_DIR}/ # 2>/dev/null
 svn commit -m "bumping plugin version to ${TRAVIS_TAG}" --username ${SVN_USER} --password ${SVN_PASS} --non-interactive --no-auth-cache # 2>/dev/null
 
+
 # ==================  SVN TAG  ==================
+echo "Updating SVN tag ${TRAVIS_TAG}"
 # Copy SVN trunk to a tag and commit it
 rsync -av --checksum --delete ${SVN_TRUNK_DIR}/./ ${SVN_TAG_DIR}
 cd ${SVN_TAG_DIR}
