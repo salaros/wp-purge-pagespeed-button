@@ -21,7 +21,7 @@ script:
   - gulp
 
 after_success:
-  # Sync Git repo to SVN 
+  # Sync Git repo to SVN
   - make svn_clone          # Clone SVN repository into the build folder
   - cd $TRAVIS_BUILD_DIR
   - chmod +x ./scripts/git-2-svn-sync.sh
