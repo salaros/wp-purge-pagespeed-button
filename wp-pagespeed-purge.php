@@ -35,7 +35,7 @@ class PageSpeedPurge {
 	public function embed_admin_assets() {
 		// This is where you can add your CSS/JS entries for wp-admin UI
 		$plugin_url   = plugin_dir_url( __FILE__ );
-		$asset_suffix = ( defined( SCRIPT_DEBUG ) && ! empty( SCRIPT_DEBUG ) ) ? '.min' : '';
+		$asset_suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '';
 		wp_enqueue_style( 'admin-styles', sprintf( '%s/assets/wp-purge-pagespeed-button%s.css', $plugin_url, $asset_suffix ) );
 		wp_enqueue_script( 'admin-styles', sprintf( '%s/assets/wp-purge-pagespeed-button%s.js', $plugin_url, $asset_suffix ), array( 'jquery' ) );
 	}
