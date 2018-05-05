@@ -3,9 +3,9 @@ PLUGIN_FILE = wp-pagespeed-purge.php
 WP_VER		:= 0.0.0
 WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
 
-TEXTBOLD		:=$(shell tput bold)
-TEXTRESET 		:=$(shell tput sgr0)
-SVN_REPO_SLUG	:=$(shell basename $(TRAVIS_BUILD_DIR))
+TEXTBOLD	:=$(shell tput bold)
+TEXTRESET	:=$(shell tput sgr0)
+PLUGIN_SLUG	:=$(shell basename $(TRAVIS_BUILD_DIR))
 
 plugin_ver:
 	@printf "Setting plugin version to: $(TEXTBOLD)$(TRAVIS_TAG)$(TEXTRESET)\n"
@@ -20,4 +20,8 @@ wp_ver:
 
 svn_clone:
 	@mkdir -pv $(TRAVIS_BUILD_DIR)/svn
-	@svn co -q https://plugins.svn.wordpress.org/$(SVN_REPO_SLUG)/ $(TRAVIS_BUILD_DIR)/svn/$(SVN_REPO_SLUG)
+	@svn co -q https://plugins.svn.wordpress.org/$(PLUGIN_SLUG)/ $(TRAVIS_BUILD_DIR)/svn/$(PLUGIN_SLUG)
+
+gettext:
+	@git ls-files | grep -e \.php$ | xargs xgettext -k_e -k__ --from-code utf-8 --omit-heade -o - -L PHP --no-wrap | tee ./languages/${PLUGIN_SLUG}.pot
+	@find . -name \*.po -execdir sh -c 'msgfmt "$$0" -o `basename $$0 .po`.mo' '{}' \;

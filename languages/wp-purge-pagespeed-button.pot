@@ -1,0 +1,3 @@
+#: wp-pagespeed-purge.php:47
+msgid "Purge Pagespeed Cache"
+msgstr ""
