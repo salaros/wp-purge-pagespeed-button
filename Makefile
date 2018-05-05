@@ -23,5 +23,15 @@ svn_clone:
 	@svn co -q https://plugins.svn.wordpress.org/$(PLUGIN_SLUG)/ $(TRAVIS_BUILD_DIR)/svn/$(PLUGIN_SLUG)
 
 gettext:
-	@git ls-files | grep -e \.php$ | xargs xgettext -k_e -k__ --from-code utf-8 --omit-heade -o - -L PHP --no-wrap | tee ./languages/${PLUGIN_SLUG}.pot
-	@find . -name \*.po -execdir sh -c 'msgfmt "$$0" -o `basename $$0 .po`.mo' '{}' \;
+	# Generating ./languages/$(PLUGIN_SLUG).pot
+	@git ls-files | grep -e \.php$ | xargs xgettext \
+		-k_e -k__ -ktranslate -kappend -kesc_attr_ -kesc_attr__ -kesc_attr_e -kesc_attr_x -kesc_attr_x:1,2c -kesc_html__ -kesc_html_e -kesc_html_x \
+		--from-code utf-8 --omit-header -o - -L PHP --no-wrap | tee ./languages/${PLUGIN_SLUG}.pot
+
+	@echo -e '\n'
+	# Refreshing .po files using .pot file
+	@find . -name \*.po -execdir sh -c 'echo $$0; msgmerge -N -o "$$0" "$$0" ${PLUGIN_SLUG}.pot' '{}' \;
+
+	@echo -e '\n'
+	# Compiling .po files with gettext
+	@find . -name \*.po -execdir sh -c 'echo $$0; msgfmt --verbose "$$0" -o `basename $$0 .po`.mo' '{}' \;
