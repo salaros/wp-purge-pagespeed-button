@@ -3,8 +3,9 @@ PLUGIN_FILE = wp-pagespeed-purge.php
 WP_VER		:= 0.0.0
 WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
 
-TEXTBOLD	:=$(shell tput bold)
-TEXTRESET 	:=$(shell tput sgr0)
+TEXTBOLD		:=$(shell tput bold)
+TEXTRESET 		:=$(shell tput sgr0)
+SVN_REPO_SLUG	:=$(shell basename $(TRAVIS_BUILD_DIR))
 
 plugin_ver:
 	@printf "Setting plugin version to: $(TEXTBOLD)$(TRAVIS_TAG)$(TEXTRESET)\n"

@@ -5,6 +5,7 @@ if [[ -z "${SVN_USER}" || -z "${SVN_PASS}" ]] ; then
     exit 1;
 fi
 
+export SVN_REPO_SLUG=${TRAVIS_BUILD_DIR##*/}
 if [[ -z "${SVN_REPO_SLUG}" ]] ; then
     echo "Please make sure both SVN_REPO_SLUG env variable is set!"
     exit 1;

@@ -7,10 +7,9 @@ cd ${TRAVIS_BUILD_DIR}
 # Bump plugin version
 make plugin_ver
 
-
 # Prepare repo
 git log  --pretty=oneline | head -n 5
-git checkout -b master
+git checkout -b ${GITHUB_PUSHBACK_BRANCH}
 git branch
 git pull -f
 
@@ -36,4 +35,4 @@ git remote add origin-with-token https://${GH_TOKEN}@${GH_ORIGIN} > /dev/null 2>
 echo $(git config --get remote.origin-with-token.url)
 
 # Push files back to Git
-git push -u origin-with-token master
+git push -u origin-with-token ${GITHUB_PUSHBACK_BRANCH}
