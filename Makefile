@@ -1,7 +1,12 @@
-PLUGIN_FILE = wp-pagespeed-purge.php
+PLUGIN_SLUG := wp-purge-pagespeed-button
+PLUGIN_FILE := wp-pagespeed-purge.php
 
 WP_VER		:= 0.0.0
-WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
+WP_API_URL  := https://api.wordpress.org/core/version-check/1.7/
+
+ifeq ($(strip $(PLUGIN_SLUG)),)
+PLUGIN_SLUG	:=$(shell basename $(TRAVIS_BUILD_DIR))
+endif
 
 ifeq ($(strip $(TRAVIS_BUILD_DIR)),)
 TRAVIS_BUILD_DIR :=$(shell pwd -L)
@@ -13,7 +18,6 @@ endif
 
 TEXTBOLD	:=$(shell tput bold)
 TEXTRESET	:=$(shell tput sgr0)
-PLUGIN_SLUG	:=$(shell basename $(TRAVIS_BUILD_DIR))
 
 plugin_ver:
 	@printf "Setting plugin version to: $(TEXTBOLD)$(TRAVIS_TAG)$(TEXTRESET)\n"
