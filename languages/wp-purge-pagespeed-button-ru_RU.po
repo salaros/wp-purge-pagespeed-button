@@ -1,5 +1,6 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: +0000\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -8,3 +9,15 @@ msgstr ""
 #: wp-pagespeed-purge.php:47
 msgid "Purge Pagespeed Cache"
 msgstr "Очистить кеш Pagespeed"
+
+#. Author of the plugin/theme
+msgid "Zhmayev Yaroslav aka Salaros"
+msgstr "Жмаев Ярослав aka Salaros"
+
+#. Description of the plugin/theme
+msgid "One-click PageSpeed cache purging using an admin bar button"
+msgstr "Очистка кеша PageSpeed в один клик, с помощью кнопки на панели администратора"
+
+#. Plugin Name of the plugin/theme
+msgid "PageSpeed Purge Button"
+msgstr "Кнопка очистки кэша PageSpeed"
