@@ -38,7 +38,7 @@ gettext:
 
 	@echo -e '\n'
 	# Refreshing .po files using .pot file
-	@find . -name \*.po -execdir sh -c 'echo $$0; msgmerge -N -o "$$0" "$$0" ${PLUGIN_SLUG}.pot' '{}' \;
+	@find . -name \*.po -execdir sh -c 'echo $$0; msgmerge -N -U --strict -o "$$0" "$$0" ${PLUGIN_SLUG}.pot' '{}' \;
 
 	@echo -e '\n'
 	# Compiling .po files with gettext
