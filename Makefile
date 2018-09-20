@@ -3,6 +3,14 @@ PLUGIN_FILE = wp-pagespeed-purge.php
 WP_VER		:= 0.0.0
 WP_API_URL  = https://api.wordpress.org/core/version-check/1.7/
 
+ifeq ($(strip $(TRAVIS_BUILD_DIR)),)
+TRAVIS_BUILD_DIR :=$(shell pwd -L)
+endif
+
+ifeq ($(strip $(TRAVIS_TAG)),)
+TRAVIS_TAG :=$(shell git describe --tags `git rev-list --tags --max-count=1` )
+endif
+
 TEXTBOLD	:=$(shell tput bold)
 TEXTRESET	:=$(shell tput sgr0)
 PLUGIN_SLUG	:=$(shell basename $(TRAVIS_BUILD_DIR))
