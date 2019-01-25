@@ -3,9 +3,10 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     rename = require('gulp-rename'),
-    cssnano = require('gulp-cssnano');
+    cssnano = require('gulp-cssnano'),
+    uglify = require('gulp-uglify');
 
-gulp.task('default', [ 'scss-compile' ]);
+gulp.task('default', [ 'scss-compile', 'js-minify' ]);
 
 gulp.task('scss-compile', function () {
     gulp.src("./assets/**/*.scss")
@@ -21,5 +22,16 @@ gulp.task('scss-compile', function () {
             suffix: ".min",
         }))
         .pipe(sourcemaps.write("./", {addComment: false}))
+        .pipe(gulp.dest("assets/"));
+});
+
+gulp.task('js-minify', function () {
+    gulp.src("./assets/**/*.js")
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: ".min",
+        }))
+        .pipe(sourcemaps.write('.', { addComment: false }))
         .pipe(gulp.dest("assets/"));
 });
